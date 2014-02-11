@@ -18,9 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
+### Gemfile
+
 ```ruby
 gem 'disable_connection_pooling'
 ```
+
+### config/application.rb
 
 ```ruby
 module MyApp
