@@ -1,6 +1,6 @@
 # DisableConnectionPooling
 
-TODO: Write a gem description
+Disable the connection pooling of Rails
 
 ## Installation
 
