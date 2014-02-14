@@ -6,4 +6,5 @@ describe 'disable_connection_pooling' do
       threads = processlist('rails32_dummy')
       expect(threads.length).to be >= 1
     end
+  end
 end
