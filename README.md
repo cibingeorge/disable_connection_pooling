@@ -4,6 +4,9 @@ Disable the connection pooling of Rails.
 
 Connect to the database for each request.
 
+[![Gem Version](https://badge.fury.io/rb/disable_connection_pooling.png)](http://badge.fury.io/rb/disable_connection_pooling)
+[![Build Status](https://drone.io/bitbucket.org/winebarrel/disable_connection_pooling/status.png)](https://drone.io/bitbucket.org/winebarrel/disable_connection_pooling/latest)
+
 ## Installation
 
 Add this line to your application's Gemfile:
