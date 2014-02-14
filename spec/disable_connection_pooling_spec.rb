@@ -1,6 +1,9 @@
 describe 'disable_connection_pooling' do
-  it 'dummy' do
-    p processlist
-    expect(1).to eq(1)
-  end
+  describe 'when Rails 3.2 / disable_connection_pooling = false'
+    it 'should have been connected after request' do
+      send_request(3200)
+
+      threads = processlist('rails32_dummy')
+      expect(threads.length).to be >= 1
+    end
 end
