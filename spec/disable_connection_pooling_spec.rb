@@ -24,7 +24,7 @@ describe 'disable_connection_pooling' do
       end
 
       it 'should have been disconnected after request' do
-        2.timrs { send_request(3202) }
+        2.times { send_request(3202) }
         threads = processlist('rails32_dummy')
         expect(threads.length).to eq(0)
       end
@@ -56,7 +56,7 @@ describe 'disable_connection_pooling' do
       end
 
       it 'should have been disconnected after request' do
-        2.timrs { send_request(4002) }
+        2.times { send_request(4002) }
         threads = processlist('rails40_dummy')
         expect(threads.length).to eq(0)
       end
