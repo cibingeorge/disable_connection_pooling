@@ -60,5 +60,7 @@ module Dummy
     config.active_record.whitelist_attributes = true
 
     config.active_record.disable_connection_pooling = false
+    config.active_record.disable_connection_pooling = false
+    #config.active_record.number_of_requests_to_disconnecting = 3
   end
 end
