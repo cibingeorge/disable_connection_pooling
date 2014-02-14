@@ -18,3 +18,19 @@ def processlist
     rows.select {|i| i['db'] }
   end
 end
+
+def killall
+  mysql do |client|
+    rows = client.query("SHOW PROCESSLIST").to_a
+
+    rows.select {|i| i['db'] }.each do |i|
+      client.query("KILL #{i['Id']}")
+    end
+  end
+end
+
+RSpec.configure do |config|
+  config.before(:each) do
+    killakk
+  end
+end
