@@ -1,6 +1,7 @@
 # DisableConnectionPooling
 
-Disable the connection pooling of Rails
+Disable the connection pooling of Rails.
+Connect to the database for each request.
 
 ## Installation
 
