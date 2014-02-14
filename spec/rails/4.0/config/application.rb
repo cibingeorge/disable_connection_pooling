@@ -27,5 +27,7 @@ module Dummy
 
     # Disable the asset pipeline.
     config.assets.enabled = false
+
+    config.active_record.disable_connection_pooling = false
   end
 end
