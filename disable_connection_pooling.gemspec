@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['sgwr_dts@yahoo.co.jp']
   spec.description   = %q{Disable the connection pooling of Rails}
   spec.summary       = %q{Disable the connection pooling of Rails}
-  spec.homepage      = ''
+  spec.homepage      = 'https://bitbucket.org/winebarrel/disable_connection_pooling'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
