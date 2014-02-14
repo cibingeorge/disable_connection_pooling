@@ -31,6 +31,6 @@ end
 
 RSpec.configure do |config|
   config.before(:each) do
-    killakk
+    killall
   end
 end
