@@ -15,3 +15,9 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+
+# Rails 3.2
+/spec/rails/3.2/.bundle
+/spec/rails/3.2/db/*.sqlite3
+/spec/rails/3.2/log/*.log
+/spec/rails/3.2/tmp
