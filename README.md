@@ -33,7 +33,6 @@ module MyApp
   class Application.configure do
     ...
     config.active_record.disable_connection_pooling = true
-    #config.active_record.number_of_requests_to_disconnecting = 1
   end
 end
 ```
