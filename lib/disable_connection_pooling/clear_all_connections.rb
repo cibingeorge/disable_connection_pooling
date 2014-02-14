@@ -6,6 +6,8 @@ class DisableConnectionPooling::ClearAllConnections
   def call(env)
     @app.call(env)
   ensure
-    ActiveRecord::Base.clear_all_connections!
+    if DisableConnectionPooling.disconnect?
+      ActiveRecord::Base.clear_all_connections!
+    end
   end
 end
