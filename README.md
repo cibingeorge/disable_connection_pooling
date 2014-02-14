@@ -1,4 +1,4 @@
-# DisableConnectionPooling
+# disable_connection_pooling
 
 Disable the connection pooling of Rails.
 
