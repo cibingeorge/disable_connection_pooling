@@ -18,8 +18,8 @@ describe 'disable_connection_pooling' do
       it 'should have been connected until end of the request' do
         script = <<-EOS
           (1..3).map do
-            Item.find_by_sql('SHOW PROCESSLIST').to_a
             sleep 1
+            Item.find_by_sql('SHOW PROCESSLIST').to_a
           end
         EOS
 
