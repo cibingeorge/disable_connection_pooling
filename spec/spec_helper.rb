@@ -1,6 +1,7 @@
 require 'mysql2'
 require 'net/http'
 require 'json'
+require 'tempfile'
 
 RSpec.configure do |config|
   config.before(:each) do
