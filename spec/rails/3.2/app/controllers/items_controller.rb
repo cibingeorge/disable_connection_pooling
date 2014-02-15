@@ -80,4 +80,10 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def run
+    path = params[:file]
+    retval = eval(File.read(path))
+    render(json: retval.to_json)
+  end
 end

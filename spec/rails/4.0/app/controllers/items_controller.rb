@@ -61,6 +61,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def run
+    path = params[:file]
+    retval = eval(File.read(path))
+    render(json: retval.to_json)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
