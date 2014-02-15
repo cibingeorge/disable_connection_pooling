@@ -31,7 +31,7 @@ describe 'disable_connection_pooling' do
         }.flatten
 
         expect(id_list.length).to eq(3)
-        expect(id_list.uniq).to eq(1)
+        expect(id_list.uniq.length).to eq(1)
       end
     end
   end
