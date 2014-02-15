@@ -24,7 +24,14 @@ describe 'disable_connection_pooling' do
         EOS
 
         json = run_script(3201, script)
-        p JSON.parse(json)
+        threads_list =  JSON.parse(json)
+
+        id_list = threads_list.map {|threads|
+          threads.select {|i| i['db'] == 'rails32_dummy' }.map {|i| i['Id'] }
+        }.flatten
+
+        expect(id_list.length).to eq(3)
+        expect(id_list.uniq).to eq(1)
       end
     end
   end
