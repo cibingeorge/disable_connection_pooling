@@ -14,6 +14,18 @@ describe 'disable_connection_pooling' do
         threads = processlist('rails32_dummy')
         expect(threads.length).to eq(0)
       end
+
+      it 'should have been connected until end of the request' do
+        script = <<-EOS
+          (1..3).map do
+            Item.find_by_sql('SHOW PROCESSLIST').to_a
+            sleep 1
+          end
+        EOS
+
+        json = run_script(3201, script)
+        p JSON.parse(json)
+      end
     end
   end
 

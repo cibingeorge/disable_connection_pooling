@@ -1,5 +1,13 @@
 require 'mysql2'
 require 'net/http'
+require 'json'
+
+RSpec.configure do |config|
+  config.before(:each) do
+    killall
+    expect(processlist.length).to eq(0)
+  end
+end
 
 def mysql
   client = Mysql2::Client.new(host: '127.0.0.1', username: 'root')
@@ -36,9 +44,19 @@ def send_request(port)
   end
 end
 
-RSpec.configure do |config|
-  config.before(:each) do
-    killall
-    expect(processlist.length).to eq(0)
+def tempfile(content)
+  Tempfile.open("#{File.basename __FILE__}.#{$$}") do |f|
+    f << content
+    f.flush
+    f.rewind
+    yield(f)
+  end
+end
+
+def run_script(port, script)
+  tempfile(script) do |f|
+    Net::HTTP.start('127.0.0.1', port) do |http|
+      http.get("/run?file=#{f.path}").body
+    end
   end
 end
