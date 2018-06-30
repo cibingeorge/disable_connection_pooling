@@ -4,8 +4,9 @@ class DisableConnectionPooling::ClearAllConnections
   end
 
   def call(env)
+    ActiveRecord::Base.connection_pool.release_connection if ActiveRecord::Base.connection_pool.active_connection?
     @app.call(env)
   ensure
-    ActiveRecord::Base.clear_all_connections!
+    ActiveRecord::Base.connection_pool.release_connection if ActiveRecord::Base.connection_pool.active_connection?
   end
 end
